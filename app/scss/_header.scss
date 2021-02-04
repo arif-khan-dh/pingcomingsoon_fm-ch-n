@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    flex-flow: column nowrap;
+
+    .logo {
+        margin: 0 auto;
+
+        img {
+            display: block;
+            height: toRem(18px);
+
+            @include breakpoint-up(medium) {
+                height: toRem(22px);
+            }
+
+            @include breakpoint-up(xlarge) {
+                height: auto;
+            }
+        }
+    }
+}

@@ -1,0 +1,160 @@
+.content_cta {
+
+    @include breakpoint-up(medium) {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    @include breakpoint-up(large) {
+        align-items: center;
+    }
+
+    .text {       
+
+        .title {
+            font-size: $font-xlg;
+            color: $gray;
+
+            @include breakpoint-up(medium) {
+                font-size: $font-xxlg;
+            }
+
+            
+            span {
+                font-weight: 700;
+                color: $veryDarkBlue;
+            }
+        }
+
+        .subtitle {
+            position: relative;
+            margin-top: toRem(20px);
+            font-size: $font-xsm;
+            color: $veryDarkBlue;
+
+            @include breakpoint-up(medium) {
+                font-size: $font-sm;
+            }
+        }
+    }
+
+    .cta {
+        margin-top: toRem(30px);
+        height: toRem(150px);
+
+        @include breakpoint-up(medium) {
+            display: flex;
+            justify-content: center;
+            height: toRem(100px);
+            
+        }
+
+        @include breakpoint-up(large) {
+            width: toRem(640px);
+        }
+        
+        //& > div > * {
+        & > * {
+            width: 90%;
+        }
+
+        .io {
+            height: toRem(40px);
+            border-radius: toRem(20px);
+        }
+
+        .email {
+            margin: 0 auto;
+
+            @include breakpoint-up(medium) {
+                width: 60%;
+                margin: 0;
+            }
+
+            input {
+                padding-left: toRem(30px);
+                border: 1px solid $paleBlue;
+                width: 100%;
+    
+                &::placeholder{
+                    color: $gray;
+                }
+    
+                &:focus {
+                    outline: none;
+                    box-shadow: 0 0 3px 0px rgba($color: $veryDarkBlue, $alpha: 0.8);
+                }
+
+                &:focus:invalid, &:invalid {
+                    box-shadow: 0 0 1px 1px rgba($lightRed, 1.0);
+                }
+            }
+            
+            span {
+                display: block;
+                visibility: hidden;
+                opacity: 0;
+                height: 0;
+                transition: height 180ms linear;
+            }
+
+            input:invalid ~ .err-email span {
+                visibility: visible;
+                opacity: 1;
+                height: toRem(20px);
+                margin: toRem(6px) auto toRem(20px);
+                font-size: $font-xxsm;
+                color: $lightRed;
+                text-align: center;
+
+                @include breakpoint-up(medium) {
+                    height: toRem(16px);
+                    text-align: start;
+                    padding-left: toRem(30px);
+                }
+            }
+        }
+
+
+        .btn {
+            margin: toRem(10px) auto;
+            background-color: $blue;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: $font-xxsm;
+            font-weight: 600;
+            box-shadow: 0px 5px 10px 0px rgba($color: $blue, $alpha: 0.5);
+            transition: box-shadow 120ms ease-in-out;
+
+            &:hover, &:focus{
+                box-shadow: 0px 5px 10px 0px rgba($color: $blue, $alpha: 0.8);
+                // border: 1px solid rgba($blue, 0.0);
+            }
+
+
+            @include breakpoint-up(small) {
+                // width: toRem(282px);
+                // width: calc(375px - 25%);
+                // width: calc(338px - 15%);
+                // width: calc(469px - 50%);
+                // width: calc(563px - 75%);
+                // width: calc(619px - 90%);
+                
+                // width: toRem(301px);
+                width: calc(602px - 90%);                
+            }
+
+            @include breakpoint-up(medium) {
+                margin: 0;
+                margin-left: toRem(12px);
+                // width: toRem(120px);
+                width: 25%;
+                font-size: $font-xsm;
+            }
+        }
+
+    }
+}

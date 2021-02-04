@@ -1,2 +1,8 @@
 @import '_content_cta';
 @import '_content_hero';
+
+.content {
+    display: flex;
+    flex-flow: column nowrap;
+    flex-grow: 1;
+}

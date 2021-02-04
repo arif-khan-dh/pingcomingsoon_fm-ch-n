@@ -16,4 +16,61 @@ body {
 
     font-family: "Libre Franklin", sans-serif;
     font-size: $font-sm;
+
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    padding: 0 toRem(20px);
+    min-width: toRem(375px);
+    width: 80%;
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+
+    @include breakpoint-up(small) {
+    }
+
+    @include breakpoint-up(medium) {
+        max-width: toRem(760px);
+    }
+}
+
+.vertical-separator {
+    margin: auto 0;
+    
+}
+.separator-1 {
+    flex-grow: 2;
+
+    @include breakpoint-up(medium) {
+        min-height: toRem(40px);
+    }
+}
+
+.separator-2 {
+    flex-grow: 1;
+    
+    @include breakpoint-up(medium) {
+        min-height: toRem(30px);
+        flex-grow: 1;
+    }
+}
+
+.separator-3 {
+    flex-grow: 2;
+
+    @include breakpoint-up(medium) {
+        min-height: toRem(40px);
+    }
+}
+
+.separator-4 {
+    flex-grow: 1;
+
+    @include breakpoint-up(medium) {
+        min-height: toRem(20px);
+    }
 }

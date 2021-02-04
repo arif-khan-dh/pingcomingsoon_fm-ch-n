@@ -1,0 +1,41 @@
+.footer {
+
+    .socials {
+        margin: 0 auto;
+        width: toRem(130px);
+        // width: auto;
+        // min-width: toRem(130px);
+        display: flex;
+        justify-content: space-between;
+
+        svg {
+            width: toRem(33px);
+            height: toRem(33px);
+            padding: toRem(8px);
+            border: 1px solid $paleBlue;
+            border-radius: 50%;
+            transition: background-color 180ms ease-in-out;
+
+            path {
+                fill: $blue;
+                transition: fill 180ms ease-in-out;
+            }
+
+
+            &:hover, &:focus {
+                cursor: pointer;
+                background-color: $blue;
+
+                path {
+                    fill: white;
+                }
+
+            }
+        }
+    }
+
+
+    .copyright {
+        margin-top: toRem(28px);
+    }
+}
